@@ -1,0 +1,32 @@
+# Django project files
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+*.egg
+*.log
+*.swp
+*.swo
+
+# Django media and static files
+media/
+static/
+
+# Django settings
+local_settings.py
+
+# Database files
+*.sqlite3
+*.db
+*.bak
+
+# Other temporary or sensitive files
+.env
+*.env
+*.bak
+*.swp
+*.tmp
+*.sass-cache/
+node_modules/
+.idea/
+.vscode/
