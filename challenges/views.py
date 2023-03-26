@@ -3,6 +3,21 @@ from django.http import HttpResponse, HttpResponseNotFound
 
 # Create your views here.
 
+monthly_challenges = {
+    "january": "No meat for the enitre month",
+    "february": "Walk for at least 20 minutes a day",
+    "march" : "Learn Django for at least 20 minutes every day!",
+    "april": "No meat for the enitre month",
+    "may": "Walk for at least 20 minutes a day",
+    "june": "Learn Django for at least 20 minutes every day!",
+    "july": "No meat for the enitre month",
+    "august": "Walk for at least 20 minutes a day",
+    "september": "Learn Django for at least 20 minutes every day!",
+    "october": "No meat for the enitre month",
+    "november": "Walk for at least 20 minutes a day",
+    "december": "Learn Django for at least 20 minutes every day!"
+}
+
 # def january(request):
 #     return HttpResponse("Eat no meat for the entire month")
 
@@ -10,12 +25,8 @@ from django.http import HttpResponse, HttpResponseNotFound
 #     return HttpResponse("Walk for at least 20 minutes everyday")
 
 def monthly_challenge(request, month):
-    if month == 'january':
-        challenge_text = "No meat for the enitre month"
-    elif month == 'february':
-        challenge_text = "Walk for at least 20 minutes a day"
-    elif month == 'march':
-        challenge_text = "No meat for the enitre month"
-    else:
-        return HttpResponseNotFound("Month not supported")
-    return HttpResponse(challenge_text)
+    try:
+        challenge_text = monthly_challenges[month]
+        return HttpResponse(challenge_text)
+    except:
+         return HttpResponseNotFound("Month not supported")
