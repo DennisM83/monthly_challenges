@@ -24,6 +24,9 @@ monthly_challenges = {
 # def february(request):
 #     return HttpResponse("Walk for at least 20 minutes everyday")
 
+def monthly_challenge_by_number(request, month):
+    return HttpResponse(month)
+
 def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month]
